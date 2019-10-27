@@ -374,6 +374,7 @@ function(avr_generate_fixed_targets)
       ${AVR_UPLOADTOOL} ${AVR_UPLOADTOOL_BASE_OPTIONS} -P ${AVR_UPLOADTOOL_PORT} -n
          -U lfuse:r:-:b
          -U hfuse:r:-:b
+         -U efuse:r:-:b
       COMMENT "Get fuses from ${AVR_MCU}"
    )
    
@@ -383,7 +384,8 @@ function(avr_generate_fixed_targets)
       ${AVR_UPLOADTOOL} ${AVR_UPLOADTOOL_BASE_OPTIONS} -P ${AVR_UPLOADTOOL_PORT}
          -U lfuse:w:${AVR_L_FUSE}:m
          -U hfuse:w:${AVR_H_FUSE}:m
-         COMMENT "Setup: High Fuse: ${AVR_H_FUSE} Low Fuse: ${AVR_L_FUSE}"
+         -U efuse:w:${AVR_E_FUSE}:m
+         COMMENT "Setup: High Fuse: ${AVR_H_FUSE} Low Fuse: ${AVR_L_FUSE} Extended Fuse: ${AVR_E_FUSE}"
    )
    
    # get oscillator calibration
