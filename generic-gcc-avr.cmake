@@ -167,10 +167,10 @@ function(add_avr_executable EXECUTABLE_NAME)
    endif(NOT ARGN)
 
    # set file names
-   set(elf_file ${EXECUTABLE_NAME}${MCU_TYPE_FOR_FILENAME}.elf)
-   set(hex_file ${EXECUTABLE_NAME}${MCU_TYPE_FOR_FILENAME}.hex)
-   set(lst_file ${EXECUTABLE_NAME}${MCU_TYPE_FOR_FILENAME}.lst)
-   set(map_file ${EXECUTABLE_NAME}${MCU_TYPE_FOR_FILENAME}.map)
+   set(elf_file ${EXECUTABLE_NAME}.elf)
+   set(hex_file ${EXECUTABLE_NAME}.hex)
+   set(lst_file ${EXECUTABLE_NAME}.lst)
+   set(map_file ${EXECUTABLE_NAME}.map)
    set(eeprom_image ${EXECUTABLE_NAME}${MCU_TYPE_FOR_FILENAME}-eeprom.hex)
 
    # elf file
